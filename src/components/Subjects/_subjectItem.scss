@@ -1,0 +1,134 @@
+.subject-item {
+  width: 60%;
+  min-width: 700px;
+  margin: 3rem auto;
+  padding: 3.4rem;
+  border-radius: 20px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: darken($color: $secondary-color500, $amount: 8%);
+  gap: 2%;
+  h5 {
+    font-size: 2rem;
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $primary-color400;
+    font-style: italic;
+  }
+
+  .user-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    .user-data {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      align-items: center;
+      .MuiAvatar-root {
+        box-shadow: 0 0 2px 0px $primary-color300;
+      }
+      h3 {
+        color: $primary-color500;
+      }
+    }
+
+    .user-actions {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      width: 200px;
+      justify-content: center;
+
+      button {
+        align-self: stretch;
+
+        &:disabled {
+          border-color: $primary-color030;
+          background-color: $secondary-color500;
+        }
+      }
+
+      a {
+        max-width: 200px;
+        padding: 0.2rem 0.4rem;
+        text-decoration: none;
+        color: $accent-color500;
+        font-weight: 800;
+        display: flex;
+        gap: 5px;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .subject-data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    .heading-info {
+      display: flex;
+      gap: 20px;
+    }
+    p {
+      text-align: start;
+      font-size: 1.1rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    width: 90%;
+    min-width: 0;
+    padding: 3.4rem 1.4rem;
+    border-radius: 5px;
+
+    h5 {
+      left: 1rem;
+      top: 0.5rem;
+
+      transform: translateX(0);
+    }
+
+    .user-container {
+      margin-top: 2rem;
+
+      .user-data {
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .user-actions {
+        width: 100%;
+        button {
+          width: 50%;
+          margin: auto;
+        }
+      }
+    }
+
+    .subject-data {
+      margin-right: 0;
+      margin-top: 1.5rem;
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}

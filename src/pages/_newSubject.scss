@@ -1,0 +1,47 @@
+.new-subject-container {
+  background-color: $primary-color050;
+  border-radius: 10px;
+  width: 30%;
+  padding: 3rem 6rem;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: relative;
+
+  form {
+    display: flex;
+    margin-top: 2rem;
+    flex-direction: column;
+
+    & > * {
+      width: 100%;
+      margin: 1.2rem 0;
+    }
+    h2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0.6rem 0;
+      text-align: center;
+      color: $accent-color500;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      border: 2px solid $accent-color500;
+      border-radius: 10px 10px 2px 2px;
+      box-sizing: border-box;
+    }
+  }
+
+  @media (max-width: 767px) {
+    width: 90%;
+    box-sizing: border-box;
+    padding: 0;
+
+    form {
+      width: 90%;
+      margin: 5rem auto 0;
+    }
+  }
+}

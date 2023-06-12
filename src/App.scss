@@ -1,0 +1,34 @@
+@import "variables";
+
+@import "./components/Story/story";
+@import "./pages/auth";
+@import "./pages/subjects";
+@import "./pages/notifications";
+@import "./components/FormElements/input";
+@import "./components/FormElements/button";
+@import "./pages/newSubject";
+@import "./components/Subjects/subjectItem";
+@import "./components/FormElements/imageUpload";
+@import "./components/Navigation/navigation";
+@import "./components/FormElements/searchBar";
+@import "./components/Promo/promoItem";
+@import "./components/Footer/footer";
+@import "./components/UIElements/modal";
+
+* {
+  margin: 0;
+}
+
+*::selection {
+  background-color: $accent-color500;
+  color: $primary-color500;
+}
+
+body {
+  background-color: $primary-color500;
+}
+
+button {
+  border: none;
+  border-radius: 4px;
+}

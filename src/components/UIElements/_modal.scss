@@ -1,0 +1,111 @@
+.modal-container {
+  background-color: $secondary-color500;
+  max-width: 600px;
+  margin: auto;
+  top: 30%;
+  position: absolute;
+  width: 85%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+
+  h4 {
+    background-color: $accent-color400;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    color: $secondary-color500;
+  }
+  p {
+    padding: 1rem;
+    font-size: 1.2rem;
+    letter-spacing: 1.2px;
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    gap: 10px;
+  }
+
+  button {
+    background-color: $accent-color400;
+    border: none;
+
+    width: 100px;
+
+    &.secondary-action {
+      background-color: $secondary-color500;
+      color: $error-color500;
+      border: 1px solid $error-color500;
+
+      &:hover {
+        color: $secondary-color500;
+        background-color: lighten($color: $error-color500, $amount: 20%);
+      }
+    }
+
+    &:not(.secondary-action) {
+      &:hover {
+        background-color: darken($color: $accent-color400, $amount: 10%);
+      }
+    }
+  }
+
+  &.error {
+    h4 {
+      background-color: $error-color500;
+      color: $secondary-color500;
+    }
+
+    button {
+      background-color: $error-color500;
+      border: none;
+      &.secondary-action {
+        background-color: $secondary-color500;
+        color: $error-color500;
+        border: 1px solid $error-color500;
+
+        &:hover {
+          color: $secondary-color500;
+          background-color: lighten($color: $error-color500, $amount: 10%);
+        }
+      }
+      &:not(.secondary-action) {
+        &:hover {
+          background-color: darken($color: $error-color500, $amount: 10%);
+        }
+      }
+    }
+  }
+
+  .rating-content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+
+    textarea {
+      box-sizing: border-box;
+      width: 100%;
+      margin: 1rem auto;
+      resize: none;
+      padding: 0.3rem 0.6rem;
+      border-radius: 5px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .modal-actions {
+      justify-content: center;
+    }
+    h4 {
+      font-size: 1.4rem;
+    }
+  }
+}

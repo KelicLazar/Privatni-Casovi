@@ -1,0 +1,56 @@
+.subjects-container {
+  width: 100%;
+  padding-top: 1.4rem;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: rgb(48, 48, 48);
+  background: linear-gradient(0deg, $accent-color050 -10%, #1f1f1f 110%);
+  background-image: url("./../../public/background.jpg");
+  background-position: 100% 75%;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  .no-subjects {
+    background-color: darken($color: $secondary-color500, $amount: 10%);
+    padding: 2rem 4rem;
+    border-radius: 5px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 10%;
+
+    button {
+      margin-top: 1.5rem;
+      background-color: $primary-color400;
+      border: none;
+
+      &:hover {
+        background-color: lighten($color: $primary-color400, $amount: 5%);
+      }
+    }
+
+    h4 {
+      font-size: 3rem;
+      color: $primary-color400;
+      font-style: italic;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .no-subjects {
+      width: 90%;
+      padding: 1rem;
+
+      h4 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

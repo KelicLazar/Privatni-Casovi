@@ -1,0 +1,24 @@
+.footer {
+  border-top: 8px solid $primary-color400;
+  padding: 4rem 0 2rem;
+  align-self: flex-end;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: $primary-color050;
+  width: 100%;
+
+  span {
+    font-style: italic;
+    font-size: 1.3rem;
+    letter-spacing: 1.2px;
+    color: $secondary-color500;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: $secondary-color500;
+    margin: 0;
+  }
+}

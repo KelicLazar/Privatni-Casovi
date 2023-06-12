@@ -1,0 +1,77 @@
+.notification-container {
+  border-radius: 5px;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 2rem 4rem;
+  margin-top: 8rem;
+  width: 90%;
+
+  .notification-item {
+    background-color: $secondary-color500;
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 2px 2px 14px 4px $primary-color500;
+    border-radius: 5px;
+
+    h4 {
+      border-bottom: 2px solid $accent-color500;
+      border-radius: 5px;
+      font-size: 2.2rem;
+      color: $accent-color500;
+      text-align: center;
+      padding: 0.5rem 2rem;
+    }
+    p {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem;
+      gap: 5%;
+    }
+    button {
+      &.secondary {
+        background-color: $secondary-color500;
+        color: $error-color500;
+        border: 1px solid $error-color500;
+
+        &:hover {
+          background-color: lighten($error-color500, 20%);
+          color: $secondary-color500;
+        }
+      }
+
+      &:not(.secondary) {
+        background-color: $accent-color500;
+
+        &:hover {
+          background-color: darken($color: $accent-color500, $amount: 10%);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem 1rem;
+    padding: 0;
+
+    .notification-item {
+      width: 100%;
+      h4 {
+        font-size: 1.7rem;
+      }
+
+      p {
+        padding: 0.5rem 1rem;
+      }
+
+      .actions {
+        justify-content: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+.form-control {
+  margin: 1.2rem auto;
+  position: relative;
+  width: 90%;
+}
+
+.form-control label {
+  position: absolute;
+  padding: 0.25rem;
+  top: 7px;
+  left: 15px;
+  text-transform: uppercase;
+  color: $secondary-color050;
+  transition: 0.2s;
+  letter-spacing: 0.1rem;
+  pointer-events: none;
+}
+
+form .form-control {
+  /* REMOVE DEFAULT STAYLING FROM BOOTSTRAP */
+  border: none;
+}
+
+.form-control input,
+.form-control textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  border: 2px solid $secondary-color050;
+  border-radius: 3px;
+  background-color: $primary-color400;
+
+  color: $secondary-color500;
+  font-weight: 600;
+  padding: 0.6rem;
+  letter-spacing: 0.1rem;
+}
+
+.form-control textarea.non-resizable {
+  resize: none;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+  outline: none;
+  background-color: $primary-color400;
+  color: $secondary-color500;
+  border-color: $accent-color500;
+}
+
+.form-control input:not([value=""]) ~ label,
+.form-control textarea:not(:empty) ~ label {
+  transform: translateX(5px) translateY(-25px);
+  font-size: 0.8rem;
+  background-color: $primary-color400;
+  border-left: 2px solid $secondary-color500;
+  border-right: 2px solid $secondary-color500;
+  font-weight: bold;
+}
+
+.form-control input:-webkit-autofill {
+  -webkit-text-fill-color: $secondary-color500 !important;
+  box-shadow: 0 0 0 50px $primary-color400 inset;
+}
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.form-control input:focus ~ label,
+.form-control textarea:focus ~ label {
+  transform: translateX(5px) translateY(-20px);
+  color: $accent-color500;
+  background-color: $primary-color400;
+  border-left: 2px solid $accent-color500;
+  border-right: 2px solid $accent-color500;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.form-control:nth-child(1) input:focus ~ label {
+  background-color: $primary-color400;
+
+  color: $accent-color500;
+}
+
+form .form-control--invalid > label[for] {
+  color: $error-color500;
+  border-color: $error-color500;
+}
+
+form .form-control--invalid:nth-child(1) input:focus ~ label[for],
+form .form-control--invalid:nth-child(1) input:not([value=""]) ~ label[for] {
+  background-color: $error-color500;
+  color: white;
+}
+
+.form-control--invalid input,
+.form-control--invalid textarea {
+  background: #a98282;
+  border-color: $error-color500;
+  color: $error-color500;
+}
+
+.form-control--invalid p {
+  color: $error-color500;
+}
+
+.form-control input[disabled],
+.form-control textarea[disabled] {
+  color: $accent-color500;
+  font-style: italic;
+}

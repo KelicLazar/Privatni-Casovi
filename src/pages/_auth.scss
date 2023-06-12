@@ -1,0 +1,93 @@
+.authentication__header {
+  color: white;
+  text-align: center;
+}
+
+.authentication form {
+  margin-top: 1.5rem;
+  border-radius: 20px;
+}
+
+.authentication {
+  width: 90%;
+  max-width: 30rem;
+  margin: 2rem auto;
+  text-align: center;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+
+  border: 2px solid $accent-color500;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 3rem 0rem 0;
+  transition: all 0.5s ease;
+  &.auth-login {
+    min-height: 200px;
+    max-height: 400px;
+    height: fit-content;
+    transition: all 0.3s ease;
+  }
+
+  &.auth-signup {
+    min-height: 400px;
+    max-height: 800px;
+    height: fit-content;
+    transition: all 0.4s ease;
+  }
+}
+
+.sign-up,
+.log-in {
+  width: calc(50% + 3px);
+  position: absolute;
+  top: -2px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 2px solid $primary-color400;
+  color: $secondary-color500;
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.4rem;
+}
+.sign-up h3,
+.log-in h3 {
+  transform: scale(0.6);
+  transition: all 0.2s;
+  color: $primary-color300;
+  font-size: 1.4rem;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+}
+
+.sign-up {
+  left: -2px;
+}
+
+.log-in {
+  right: -2px;
+}
+.sign-up.active,
+.log-in.active {
+  background-color: $primary-color400;
+  border: 2px solid $accent-color500;
+  z-index: 1;
+}
+
+.sign-up.active h3,
+.log-in.active h3 {
+  transform: scale(1);
+  color: $primary-color500;
+  transition: all 0.2s;
+  color: $accent-color500;
+}
+
+.phone-number {
+  display: flex;
+}
+
+.authentication form {
+  margin-bottom: 1rem;
+}

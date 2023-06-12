@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
+import "./App.scss";
+
+import Auth from "./pages/Auth";
+import Welcome from "./pages/Welcome";
+import Subjects from "./pages/Subjects";
+import { AuthContext } from "./components/context/auth-context";
+import NewSubject from "./pages/NewSubject";
+import { useContext } from "react";
+import Notifications from "./pages/Notifications";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const authContext = useContext(AuthContext);
+
+  const routes = [
+    {
+      path: "/",
+      element: <Welcome />,
+    },
+    { path: "/auth", element: <Auth /> },
+    { path: "/casovi", element: <Subjects /> },
+    {
+      path: "/new-subject",
+      element: authContext.isLoggedIn ? (
+        <NewSubject />
+      ) : (
+        <Navigate replace to="/" />
+      ),
+    },
+    {
+      path: "/notifications",
+      element: authContext.isLoggedIn ? (
+        <Notifications />
+      ) : (
+        <Navigate replace to="/" />
+      ),
+    },
+    { path: "/*", element: <Navigate replace to="/" /> },
+  ];
+
+  const router = createBrowserRouter(routes);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;

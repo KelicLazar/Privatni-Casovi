@@ -1,0 +1,171 @@
+.navigation {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    display: none;
+  }
+  .actions-container {
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+    vertical-align: middle;
+    &.search {
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      margin-right: 2rem;
+      padding: 0;
+      font-size: 1.4rem;
+      box-sizing: border-box;
+
+      &:hover {
+        border-bottom: 1px solid $secondary-color500;
+      }
+    }
+  }
+
+  h1 {
+    color: $accent-color500;
+    font-weight: 800;
+    font-family: Helvetica, sans-serif;
+    vertical-align: middle;
+    color: $secondary-color500;
+    font-style: italic;
+
+    i {
+      color: $secondary-color500;
+      color: inherit;
+    }
+  }
+
+  @media (max-width: 768px) {
+    color: red !important;
+    width: 90%;
+    justify-content: flex-start;
+    gap: 5%;
+
+    a.search,
+    a.auth {
+      display: none;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      padding: 0;
+      gap: 5%;
+      span {
+        background-color: $accent-color500;
+
+        width: 35px;
+        margin: 5px auto;
+        height: 3px;
+      }
+    }
+    h1 {
+      font-size: 1.4rem;
+      color: $accent-color500;
+    }
+  }
+}
+
+//DRAWER STYLES
+.navigation-drawer {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+  .MuiPaper-root {
+    background-color: $accent-color500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8%;
+    width: 75%;
+
+    h2 {
+      background-color: red;
+      padding: 0 2.5rem;
+      background-color: transparent;
+      color: $primary-color400;
+      text-align: center;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+  }
+}
+
+//AVATAR MENU STYLES
+
+.avatar-container {
+  display: flex;
+  color: $secondary-color500;
+  align-items: center;
+  cursor: pointer;
+  gap: 7px;
+
+  h2 {
+    font-weight: 400;
+    font-style: italic;
+    @media (max-width: 768px) {
+      display: none !important;
+    }
+  }
+
+  &:hover {
+    h2 {
+      border-bottom: 1px solid $secondary-color500;
+    }
+  }
+}
+
+.avatar-img {
+  @media (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+.avatar-menu {
+  @media (max-width: 768px) {
+    display: none;
+  }
+  .MuiPaper-root {
+    border-radius: 10px;
+
+    ul {
+      background-color: $primary-color500;
+      gap: 5px;
+
+      hr {
+        background-color: $secondary-color050;
+        margin: 0;
+      }
+      li {
+        color: $secondary-color500;
+        font-size: 1.2rem;
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+        &:hover {
+          background-color: $accent-color050;
+        }
+      }
+    }
+  }
+}
